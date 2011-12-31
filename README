@@ -1,0 +1,29 @@
+Install
+# chmod 777 /opt
+# tar xvf gcc-3.4.6-2f.tgz -C /opt
+# cd /opt/gcc-3.4.6-2f/bin
+
+Set env
+there are three ways to set: 
+1. # export PATH=$PATH:/opt/gcc-3.4.6-2f/bin
+
+2. # echo export PATH=$PATH:/opt/gcc-3.4.6-2f/bin >> /etc/environment 
+   # source /etc/environment
+
+3. # echo export PATH=$PATH:/opt/gcc-3.4.6-2f/bin >> ~/.bashrc 
+   # source ~/.bashrc 
+
+Check
+#  mipsel-linux-gcc -v
+when you see some words like below that's install successful.
+
+Reading specs from /home/cpu/gcc-3.4.6-2f/bin/../lib/gcc/mipsel-linux/3.4.6/specs
+Configured with: ../gcc-3.4.6/configure --prefix=/opt/gcc-3.4.6-2f/ --target=mipsel-linux --host=i686-linux --enable-threads=posix --enable-shared --disable-checking --enable-languages=c,c++,f77 -v
+Thread model: posix
+gcc version 3.4.6
+
+Example
+# mipsel-linux-gcc example.c -o example
+# file example
+example: ELF 32-bit LSB executable, MIPS, MIPS-II version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.4.0, not stripped
+
